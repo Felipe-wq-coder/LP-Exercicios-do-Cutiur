@@ -33,28 +33,51 @@ Para mais informações acesse [Aula 01: Fluxogramas.](https://www.notion.so/cai
    
    ```mermaid
    flowchart TD
-      A["Sua resposta aqui!"]
+    start(( Início )) --> inputNota[\ Digite sua Nota \]
+    inputNota --> inputFreq[\ Digite sua Frequência % \]
+    inputFreq --> verificaNota{Nota >= 50?}
+    verificaNota --> |Não| reprovado1[/ Reprovado /]
+    verificaNota --> |Sim| verificaFreq{Frequência >= 75%?}
+    verificaFreq --> |Não| reprovado2[/ Reprovado /]
+    verificaFreq --> |Sim| aprovado[/ Aprovado /]
+    reprovado1 --> fim([ Fim ])
+    reprovado2 --> fim
+    aprovado --> fim
+
    ```
    
 3. Crie um fluxograma para calcular a soma de dois números fornecidos pelo usuário.
    
    ```mermaid
    flowchart TD
-      B["Sua resposta aqui!"]
+      start((Inicio)) --> inputN1[\ Digite o N1 \]
+      inputN1 --> inputN2[\ Digite o N2 \]
+      inputN2 --> Soma{N1 + N2}
+      Soma --> Resultado[/ Resultado /]
+      Resultado --> fim([ Fim ])
+      
    ```
    
 4. Elabore um fluxograma que leia um número e exiba se ele é positivo ou negativo.
    
    ```mermaid
    flowchart TD
-      C["Sua resposta aqui!"]
+      start((Inicio)) --> number[\ Digite um numero \]
+      number --> verificar{Numero >= 0}
+      verificar --> |Não| negativo[/ Negativo /] --> fim([Fim])
+      verificar --> |Sim| positivo[/ Positivo /] --> fim
+      
+   
    ```
    
 5. Desenvolva um fluxograma que leia a idade de uma pessoa e indique se ela pode votar.
    
    ```mermaid
    flowchart TD
-      D["Sua resposta aqui!"]
+      start((Inicio)) --> idade[\ Digite Sua Idade \] 
+      idade --> verificar{Idade >= 18}
+      verificar --> |Não| Proibido[/ NãoPode /] --> fim([Fim])
+      verificar --> |Sim| Pode[/ Pode /]  --> fim
    ```
    
 6. Crie um fluxograma que leia dois números e determine o maior entre eles.
